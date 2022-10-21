@@ -7,7 +7,7 @@ export const fonts: Record<string, unknown> = {
   weight: {
     normal: '400',
     medium: '500',
-    semibold: '600',
+    semibold: '600'
   },
 
   size: {

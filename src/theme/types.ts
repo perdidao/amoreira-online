@@ -45,7 +45,7 @@ export type FontWeight = 'normal' | 'medium' | 'semibold'
 
 export type FontPresetSize = 'sm' | 'md' | 'lg'
 
-export type MediaSize = 'mobile' | 'tablet' | 'desktop'
+export type MediaSize = 'mobile' | 'tablet' | 'notebook' | 'desktop'
 
 export interface ThemeOptions {
   [key: string]: Record<string, unknown>

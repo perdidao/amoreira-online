@@ -4,60 +4,56 @@ import React from 'react'
 import { useTranslations } from 'next-intl'
 
 // Helpers
+import { useRouter } from 'next/router'
 
 // Components
 import Link from 'next/link'
-
-// Assets
-
-// Env
+import Image from 'next/image'
 
 // Types
 import { HeaderProps as Props } from './Header.types'
 
 // Styles
 import * as Styled from './Header.styles'
-import { useGetProjectInfo } from '@services/useGetProjectInfo'
 
 const Header = (props: Props): JSX.Element => {
-  const {
-    title
-  } = props
+  const router = useRouter()
 
-  const t = useTranslations('global')
-
-  const {
-    data,
-    isFetching,
-    isError
-  } = useGetProjectInfo()
-
-  console.log(data)
-
-  const renderContent = (): JSX.Element => {
-    if (isFetching) {
-      return <p>Carregando...</p>
-    }
-    
-    if (isError || !data) {
-      return <p>An error occurred...</p>
-    }
-
-    return (
-      <>
-        <Styled.Title>{data.title}</Styled.Title>
-        <p>{data.description}</p>
-        <nav>
-          {title}
-          <Link href="/another-page">Outra página</Link>
-        </nav>
-      </>
-    )
+  const _handleRedirect = (): void => {
+    router.push('/')
   }
 
   return (
     <Styled.Container>
-      {renderContent()}
+      <Styled.Wrapper>
+        <h1 onClick={(): void => _handleRedirect()}>
+          <Image
+            src="/assets/images/logo.svg"
+            alt="Amoreira Foods"
+            layout="intrinsic"
+            width={120}
+            height={120}
+          />
+        </h1>
+        <Styled.Nav>
+          <Link href="/">
+            <Styled.NavLink
+              title="Página inicial"
+              active={router.pathname === '/'}
+            >
+              Início
+            </Styled.NavLink>
+          </Link>
+          <Link href="/contato">
+            <Styled.NavLink
+              title="Entre em contato conosco"
+              active={router.pathname === '/contato'}
+            >
+              Contato
+            </Styled.NavLink>
+          </Link>
+        </Styled.Nav>
+      </Styled.Wrapper>
     </Styled.Container>
   )
 }

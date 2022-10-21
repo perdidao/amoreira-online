@@ -1,10 +1,10 @@
 export const colors: any = {
-  primary: '#FF781F',
+  primary: '#feb95a',
   white: '#FFFFFF',
   black: '#000000',
 
   brand: {
-    primary: '#FF781F',
+    primary: '#feb95a',
   },
 
   shadow: {
@@ -12,10 +12,10 @@ export const colors: any = {
   },
 
   background: {
-    default: '#141414',
-    primary: '#1a1a1a',
-    secondary: '#1F1F1F',
-    tertiary: '#292929',
+    default: '#0c0c0e',
+    primary: '#201f25',
+    secondary: '#212028',
+    tertiary: '#2d313d',
     highlight: 'rgba(255,255,255,.04)',
   },
 
@@ -26,7 +26,7 @@ export const colors: any = {
   },
 
   content: {
-    primary: '#FFF',
+    primary: '#7d7d7f',
     secondary: 'rgba(255,255,255,.80)',
     tertiary: 'rgba(255,255,255,.40)',
     inverted: {
@@ -37,10 +37,10 @@ export const colors: any = {
   },
 
   feedback: {
-    error: '#f43630',
+    error: '#c05f56',
     info: '#308cf4',
-    success: '#8fb300',
-    warning: '#FCA903',
+    success: '#21c0aa',
+    warning: '#feb95a',
   },
 
   gray: {

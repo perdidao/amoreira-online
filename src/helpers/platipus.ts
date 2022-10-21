@@ -15,7 +15,7 @@ export function toRem(value: string | number): string {
 }
 
 /**
- * Shortcut to provide rem spacing from Defuse Kit
+ * Shortcut to provide rem spacing from Platipus
  * @param size size name (ex.: nano, tiny, xxxs, etc...)
  * @returns the rem value associated to the size name (ex.: 1rem)
  * @example spacing('sm')
@@ -25,10 +25,20 @@ export function spacing(size: Size): string {
 }
 
 /**
+ * Shortcut to provide media defaults from Platipus
+ * @param device device name (mobile, tablet, notebook, desktop)
+ * @returns the integer width of the device (ex.: 1rem)
+ * @example media('notebook')
+ */
+export function media(device: MediaSize) {
+  return toRem(theme.media[device])
+}
+
+/**
  * Helper to provide the desired theme color
  * @param color a string of the desired color category and name splitted by a dash (surface-highlight)
  * @returns the color string associated to the Family/Color
- * @example color('brand-primary') for Defuse Kit's Brand/Primary
+ * @example color('brand-primary') for Platipus's Brand/Primary
  */
 export function color(color: string): string {
   const colorCodes: string[] = color.split('-')
