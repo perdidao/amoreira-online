@@ -32,7 +32,7 @@ const DefaultLayout = (props: LayoutProps) => {
     <ThemeProvider theme={theme}>
       <Head>
         <title>
-          {`${title} | Run Boost - ${t('heading')}`}
+          {`${title} | Amoreira Online - ${t('heading')}`}
         </title>
         <meta
           name="description"
