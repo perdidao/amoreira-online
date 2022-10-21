@@ -10,7 +10,11 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 // Styles
 import '@theme/global.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
+interface CustomPageProps {
+  messages: any
+}
+
+function MyApp({ Component, pageProps }: AppProps<CustomPageProps>) {
   const queryClient = new QueryClient()
   
   return (
