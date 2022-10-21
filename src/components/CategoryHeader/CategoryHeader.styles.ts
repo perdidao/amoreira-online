@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 
 // Helpers
-import { centered, color, fontSize, fontWeight, spacing } from '@helpers/platipus'
+import { color, fontSize, fontWeight, spacing } from '@helpers/platipus'
 
 // Types
 
 // Core element styles
 export const Container = styled.div`
-  ${centered()};
   margin-bottom: ${spacing('xl')};
 `
 

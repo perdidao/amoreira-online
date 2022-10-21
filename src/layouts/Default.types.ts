@@ -4,4 +4,6 @@ export interface LayoutProps {
   children: ReactNode
   title: string
   description?: string
+  spaced?: boolean
+  centered?: boolean
 }

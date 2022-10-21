@@ -7,20 +7,25 @@ import { useTranslations } from 'next-intl'
 // Nextjs
 import Head from 'next/head'
 
+// Components
+import { Header } from '@components/Header'
+
 // Types
 import { LayoutProps } from '@layouts/Default.types'
 
 // Styles
 import { theme } from '@theme/default'
-import { Header } from '@components/Header'
+import * as Styled from './Default.styles'
 
-// Components
+const DefaultLayout = (props: LayoutProps) => {
+  const {
+    children,
+    title,
+    description,
+    spaced,
+    centered
+  } = props
 
-const DefaultLayout = ({
-  children,
-  title,
-  description
-}: LayoutProps) => {
   const t = useTranslations('global')
 
   return (
@@ -38,7 +43,12 @@ const DefaultLayout = ({
       <Header
         title={title}
       />
-      {children}
+      <Styled.PageWrapper
+        spaced={spaced || false}
+        centered={centered || false}
+      >
+        {children}
+      </Styled.PageWrapper>
     </ThemeProvider>
   )
 }

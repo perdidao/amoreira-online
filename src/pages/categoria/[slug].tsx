@@ -24,7 +24,7 @@ const CategoryPage: NextPage = () => {
 
   if (categoryIsFetching) { 
     return (
-      <DefaultLayout title={currentCategorySlug}>
+      <DefaultLayout title={currentCategorySlug} centered={true} spaced={true}>
         <Loader size={40} />
       </DefaultLayout>
     )

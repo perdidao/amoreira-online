@@ -7,7 +7,6 @@ import { centered, color, fontSize, fontWeight, mediaQuerie, spacing } from '@he
 
 // Core element styles
 export const Container = styled.div`
-  ${centered()};
   display: flex;
   align-items: center;
   justify-content: space-around;
