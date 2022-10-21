@@ -1,9 +1,11 @@
+import { HeroSection } from '@components/HeroSection'
 import { DefaultLayout } from '@layouts/Default'
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
   return (
     <DefaultLayout title="Início">
+      <HeroSection />
       <section>
         Your index page component
       </section>

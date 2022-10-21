@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 // Helpers
-import { color, fontBody, media, spacing } from '@helpers/platipus'
+import { color, fontBody, fontSize, media, spacing } from '@helpers/platipus'
 
 // Types
 interface NavLinkProps {
@@ -27,17 +27,12 @@ export const Nav = styled.nav`
   display: flex;
   align-items: stretch;
   justify-content: flex-end;
-
-  &__active {
-    display: block;
-    margin-left: $spacing-lg;
-    font-weight: $weight-bold;
-  }
 `
 
 export const NavLink = styled.a<NavLinkProps>`
   display: block;
   margin-left: ${spacing('lg')};
+  font-size: ${fontSize('lg')};
   font-weight: ${({ active, theme }): string => active ? theme.fonts.weight.semibold : theme.fonts.weight.normal};
   color: ${({ active }): string => active ? color('primary') : 'inherit'};
   cursor: pointer;

@@ -1,6 +1,7 @@
 import { theme } from '@theme/default'
 import { spacing as sizes } from '@theme/spacing'
-import { FontPresetSize, MediaSize, Size } from '@theme/types'
+import { fonts } from '@theme/fonts' 
+import { FontPresetSize, FontSize, FontWeight, MediaSize, Size } from '@theme/types'
 
 /**
  * Helper to convert pixel to rem
@@ -19,9 +20,52 @@ export function toRem(value: string | number): string {
  * @param size size name (ex.: nano, tiny, xxxs, etc...)
  * @returns the rem value associated to the size name (ex.: 1rem)
  * @example spacing('sm')
+ * nano: 4
+ * tiny: 8
+ * xxxs: 12
+ * xxs: 16
+ * xs: 20
+ * sm: 24
+ * md: 32
+ * lg: 40
+ * xl: 48
+ * xxl: 64
+ * xxxl: 80
+ * huge: 120
+ * giga: 160
  */
 export function spacing(size: Size): string {
   return sizes[size]
+}
+
+/**
+ * Shortcut to provide rem font-size from Platipus
+ * @param size size name (ex.: xxxs, xxs, xs, etc...)
+ * @returns the rem value associated to the size name (ex.: 1rem)
+ * @example fontSize('sm')
+ * xxxs: 6
+ * xxs: 8
+ * xs: 10
+ * sm: 12
+ * md: 16
+ * lg: 20
+ * xl: 24
+ * xxl: 32
+ * xxxl: 48
+ * hero: 74
+ */
+export function fontSize(size: FontSize): string {
+  return fonts.size[size]
+}
+
+/**
+ * Shortcut to provide font-weight from Platipus
+ * @param weight weight key (normal, medium or semibold)
+ * @returns the weight associated to the weight key (ex.: 400)
+ * @example fontWeight('normal')
+ */
+export function fontWeight(weight: FontWeight): string {
+  return fonts.weight[weight]
 }
 
 /**
@@ -61,19 +105,19 @@ export function mediaQuerie(size: MediaSize, content: string): string {
   switch (size) {
     case 'desktop':
       return `
-        @media (min-width: 1440px) {
+        @media (max-width: ${theme.media.notebook}px) {
           ${content};
         }
       `
     case 'tablet':
       return `
-        @media (min-width: 768px) {
+        @media (max-width: ${theme.media.tablet}px) {
           ${content};
         }
       `
     default:
       return `
-        @media (min-width: 0) {
+        @media (max-width: ${theme.media.mobile}px) {
           ${content};
         }
       `
@@ -280,5 +324,15 @@ export function fontBody(size?: FontPresetSize): string {
     font-family: ${theme.fonts.secondary};
     font-weight: ${theme.fonts.weight.normal};
     ${mutableProps}
+  `
+}
+
+
+// Page Helper
+export function centered(spaced?: boolean): string {
+  return `
+    width: 90vw;
+    max-width: calc(${media('notebook')} - 40px);
+    margin: ${spaced ? spacing('lg') : '0'} auto;
   `
 }

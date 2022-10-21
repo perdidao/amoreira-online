@@ -23,6 +23,7 @@ export type FontSize =
   | 'xl'
   | 'xxl'
   | 'xxxl'
+  | 'hero'
 
 export type LineHeight =
   | 'xxxs'
@@ -41,7 +42,7 @@ export type TextTransform = 'capitalize' | 'uppercase' | 'lowercase'
 
 export type FontFamily = 'primary' | 'secondary'
 
-export type FontWeight = 'normal' | 'medium' | 'semibold'
+export type FontWeight = 'normal' | 'bold'
 
 export type FontPresetSize = 'sm' | 'md' | 'lg'
 

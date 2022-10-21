@@ -27,7 +27,7 @@ export const colors: any = {
 
   content: {
     primary: '#7d7d7f',
-    secondary: 'rgba(255,255,255,.80)',
+    secondary: '#c4c4c2',
     tertiary: 'rgba(255,255,255,.40)',
     inverted: {
       primary: 'rgba(0,0,0,.88)',

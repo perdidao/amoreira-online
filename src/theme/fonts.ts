@@ -1,25 +1,25 @@
 import { toRem } from '@helpers/platipus'
 
-export const fonts: Record<string, unknown> = {
+export const fonts = {
   primary: '"Sora", sans-serif',
   secondary: '"Archivo", sans-serif',
 
   weight: {
     normal: '400',
-    medium: '500',
-    semibold: '600'
+    bold: '700'
   },
 
   size: {
-    xxxs: toRem(13),
-    xxs: toRem(15),
-    xs: toRem(16),
-    sm: toRem(20),
-    md: toRem(24),
-    lg: toRem(32),
-    xl: toRem(40),
-    xxl: toRem(48),
-    xxxl: toRem(56),
+    xxxs: toRem(6),
+    xxs: toRem(8),
+    xs: toRem(10),
+    sm: toRem(12),
+    md: toRem(16),
+    lg: toRem(20),
+    xl: toRem(24),
+    xxl: toRem(32),
+    xxxl: toRem(48),
+    hero: toRem(74)
   },
 
   height: {
