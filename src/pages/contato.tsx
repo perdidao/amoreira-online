@@ -1,7 +1,8 @@
-import { CategoryNavigation } from '@components'
-import { HeroSection } from '@components/HeroSection'
-import { DefaultLayout } from '@layouts/Default'
+// Next
 import type { NextPage } from 'next'
+
+// Layout
+import { DefaultLayout } from '@layouts/Default'
 
 const ContactPage: NextPage = () => {
   return (

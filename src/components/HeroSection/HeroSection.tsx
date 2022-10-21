@@ -8,7 +8,7 @@ import React from 'react'
 // Components
 
 // Assets
-import Image from 'next/image'
+import Image from 'next/future/image'
 
 // Env
 
@@ -39,7 +39,6 @@ const HeroSection = (props: Props): JSX.Element => {
       <Image
         src="/assets/images/hero-illustration.svg"
         alt="Imagem que ilustra uma mulher indecisa sobre o que comer, mostrando várias opções. Entre elas, um hamburguer, salada, sucos, peixe, donut, sanduíche e maçã."
-        layout="intrinsic"
         width="540"
         height="540"
       />

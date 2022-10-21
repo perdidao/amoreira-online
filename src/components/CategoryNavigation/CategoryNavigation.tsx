@@ -10,7 +10,13 @@ import { useGetCategories } from '@services/useGetCategories'
 // Styles
 import * as Styled from './CategoryNavigation.styles'
 
-const CategoryNavigation = (): JSX.Element => {
+const CategoryNavigation = (props: {
+  currentCategorySlug?: string
+}): JSX.Element => {
+  const {
+    currentCategorySlug
+  } = props
+
   const {
     data,
     isFetching,
@@ -26,6 +32,7 @@ const CategoryNavigation = (): JSX.Element => {
           <Shimmer
             width={168}
             height={96}
+            key={i}
           />
         )
       }
@@ -42,6 +49,7 @@ const CategoryNavigation = (): JSX.Element => {
         {data.map((category) =>
           <CategoryButton
             {...category}
+            active={currentCategorySlug === category.slug}
             key={category.id}
           />
         )}

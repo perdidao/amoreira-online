@@ -7,18 +7,19 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 // Types
-import { Category } from '@models/categories'
+import { CategoryButtonProps as Props } from './CategoryButton.types'
 
 // Styles
 import * as Styled from './CategoryButton.styles'
 
-const CategoryButton = (props: Category): JSX.Element => {
+const CategoryButton = (props: Props): JSX.Element => {
   const router = useRouter()
   
   const {
     slug,
     title,
-    totalItems
+    totalItems,
+    active
   } = props
 
   const _handleRedirect = (): void => {
@@ -28,6 +29,7 @@ const CategoryButton = (props: Category): JSX.Element => {
   return (
     <Styled.Container
       onClick={(): void => _handleRedirect()}
+      active={active}
     >
       <Image
         src={`/assets/icons/categories/${slug}.png`}

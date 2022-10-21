@@ -1,5 +1,5 @@
 export interface Category {
-  id: number
+  id: string
   title: string
   totalItems: number
   slug: string

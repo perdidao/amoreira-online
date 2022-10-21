@@ -4,9 +4,12 @@ import styled from 'styled-components'
 import { color, fontSize, fontWeight, spacing } from '@helpers/platipus'
 
 // Types
+interface CategoryButtonStyleProps {
+  active: boolean
+}
 
 // Core element styles
-export const Container = styled.button`
+export const Container = styled.button<CategoryButtonStyleProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +18,10 @@ export const Container = styled.button`
   border-radius: ${spacing('md')};
   padding: ${spacing('sm')};
   margin: 0;
-  background-image: linear-gradient(to right bottom, ${color('background-secondary')}, ${color('background-tertiary')});
+  background: ${({ active }): string => active
+    ? `linear-gradient(to right bottom, ${color('background-tertiary')}, ${color('background-tertiary')}`
+    : `linear-gradient(to right bottom, ${color('background-secondary')}, ${color('background-tertiary')}`
+  });
   cursor: pointer;
   transition: opacity 300ms ease-in-out;
 

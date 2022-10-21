@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 
 // Components
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from 'next/future/image'
 
 // Types
 import { HeaderProps as Props } from './Header.types'
@@ -30,7 +30,6 @@ const Header = (props: Props): JSX.Element => {
           <Image
             src="/assets/images/logo.svg"
             alt="Amoreira Foods"
-            layout="intrinsic"
             width={120}
             height={120}
           />
