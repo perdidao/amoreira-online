@@ -15,3 +15,9 @@ export const storeStatusText = (workdays: string[]): string => {
 
   return 'fechado'
 }
+
+export const productPriceFormatter = (price: number | null): string => {
+  if (price === null) return ''
+
+  return price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+}

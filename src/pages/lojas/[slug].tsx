@@ -1,6 +1,6 @@
 
 // Services
-import { useGetCategory } from '@services/useGetCategory'
+import { useGetStore } from '@services/useGetStore'
 
 // Hooks
 import { useRouter } from 'next/router'
@@ -10,14 +10,13 @@ import { DefaultLayout } from '@layouts/Default'
 
 // Components
 import {
-  CategoryNavigation,
-  CategoryHeader,
   Loader,
-  StoreList
+  StoreHeader
 } from '@components'
 
 // Types
 import type { GetStaticPaths, NextPage } from 'next'
+import { StoreMenu } from '@components/StoreMenu'
 
 const CategoryPage: NextPage = () => {
   const router = useRouter()
@@ -27,32 +26,31 @@ const CategoryPage: NextPage = () => {
   } = router
 
   const isSlug = typeof slug === "string"
-  const currentCategorySlug = isSlug ? slug : ''
+  const currentStoreSlug = isSlug ? slug : ''
 
   const {
-    data: categoryData,
-    isFetching: categoryIsFetching,
-    isError: categoryIsError
-  } = useGetCategory()
+    data,
+    isFetching,
+    isError
+  } = useGetStore()
 
-  if (categoryIsFetching) { 
+  if (isFetching) { 
     return (
-      <DefaultLayout title={currentCategorySlug} centered={true} spaced={true}>
+      <DefaultLayout title={currentStoreSlug} centered={true} spaced={true}>
         <Loader size={40} />
       </DefaultLayout>
     )
   }
 
-  if (!categoryData) {
-    router.push(`/categoria/${slug}`)
+  if (!data || !data.menu) {
+    router.push(`/`)
     return <></>
   }
 
   return (
-    <DefaultLayout title={categoryData.title}>
-      <CategoryHeader {...categoryData} />
-      <CategoryNavigation currentCategorySlug={currentCategorySlug} />
-      <StoreList categorySlug={currentCategorySlug} />
+    <DefaultLayout title={data.title}>
+      <StoreHeader {...data} />
+      <StoreMenu menus={data.menu} />
     </DefaultLayout>
   )
 }

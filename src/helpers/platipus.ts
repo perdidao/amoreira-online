@@ -171,15 +171,15 @@ export function fontTitle(size?: FontPresetSize): string {
   switch (size) {
     case 'sm':
       mutableProps = `
-        font-size: ${theme.fonts.size.sm};
-        line-height: ${theme.fonts.height.sm};
+        font-size: ${theme.fonts.size.xl};
+        line-height: ${theme.fonts.height.xl};
       `
       break
 
     case 'lg':
       mutableProps = `
-        font-size: ${theme.fonts.size.lg};
-        line-height: ${theme.fonts.height.lg};
+        font-size: ${theme.fonts.size.hero};
+        line-height: ${theme.fonts.height.hero};
       `
       break
 

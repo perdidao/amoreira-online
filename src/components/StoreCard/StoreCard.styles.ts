@@ -17,6 +17,8 @@ export const Container = styled.div`
 `
 
 export const Logo = styled.figure`
+  cursor: pointer;
+
   img {
     display: block;
     max-width: 100%;
@@ -33,6 +35,11 @@ export const Title = styled.h3`
   font-weight: ${fontWeight('normal')};
   color: ${color('content-secondary')};
   margin-bottom: ${spacing('xs')};
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `
 
 export const Categories = styled.nav`

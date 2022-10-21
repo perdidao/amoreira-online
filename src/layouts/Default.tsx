@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl'
 import Head from 'next/head'
 
 // Components
-import { Header } from '@components/Header'
+import { Header } from '@components'
 
 // Types
 import { LayoutProps } from '@layouts/Default.types'

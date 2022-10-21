@@ -1,34 +1,26 @@
 import React from 'react'
 
-// i18n
-// import { useTranslations } from 'next-intl'
-
 // Helpers
+import { isStoreOpenToday, storeStatusText } from '@helpers/storeHelpers'
 
 // Components
-
-// Assets
-
-// Env
+import Image from 'next/future/image'
+import Link from 'next/link'
 
 // Types
 import { StoreCardProps as Props } from './StoreCard.types'
 
 // Styles
 import * as Styled from './StoreCard.styles'
-import Image from 'next/future/image'
-import { isStoreOpenToday, storeStatusText } from '@helpers/storeHelpers'
-import Link from 'next/link'
 
 const StoreCard = (props: Props): JSX.Element => {
   const {
     title,
+    slug,
     logo,
     workdays,
     categories
   } = props
-
-  // const t = useTranslations()
 
   const renderCategoryIcons = (): JSX.Element[] => {
     const categoryIcons: JSX.Element[] = []
@@ -54,16 +46,24 @@ const StoreCard = (props: Props): JSX.Element => {
   return (
     <Styled.Container>
       <Styled.Logo>
-        <Image
-          src={logo}
-          alt={title}
-          width={240}
-          height={240}
-        />
+        <Link
+          href={`/lojas/${slug}`}
+          title={title}>
+          <Image
+            src={logo}
+            alt={title}
+            width={240}
+            height={240}
+          />
+        </Link>
       </Styled.Logo>
       <Styled.Info>
         <Styled.Title>
-          {title}
+          <Link
+            href={`/lojas/${slug}`}
+            title={title}>
+            {title}
+          </Link>
         </Styled.Title>
         <Styled.Categories>
           {renderCategoryIcons()}

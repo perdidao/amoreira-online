@@ -1,21 +1,16 @@
 import React from 'react'
 
-// Helpers
-
 // Components
+import { StoreCard, Shimmer } from '@components'
 
-// Assets
-
-// Env
+// Services
+import { useGetStores } from '@services/useGetStores'
 
 // Types
 import { StoreListProps as Props } from './StoreList.types'
 
 // Styles
 import * as Styled from './StoreList.styles'
-import { useGetStores } from '@services/useGetStores'
-import { Shimmer } from '..'
-import { StoreCard } from '@components/StoreCard'
 
 const StoreList = (props: Props): JSX.Element => {
   const {
@@ -26,10 +21,6 @@ const StoreList = (props: Props): JSX.Element => {
     data,
     isFetching
   } = useGetStores()
-
-  if (!data) {
-    return <></>
-  }
 
   if (isFetching) {
     const shimmers: JSX.Element[] = []
@@ -49,6 +40,10 @@ const StoreList = (props: Props): JSX.Element => {
         {shimmers}
       </Styled.Container>
     )
+  }
+
+  if (!data) {
+    return <></>
   }
 
   return (

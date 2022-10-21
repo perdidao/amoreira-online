@@ -6,15 +6,13 @@ import { DefaultLayout } from '@layouts/Default'
 
 // Components
 import {
-  HeroSection,
-  CategoryNavigation,
-  StoreList
+  StoreList,
+  CategoryNavigation
 } from '@components'
 
-const Home: NextPage = () => {
+const StoresPage: NextPage = () => {
   return (
-    <DefaultLayout title="Início">
-      <HeroSection />
+    <DefaultLayout title="Lojas">
       <CategoryNavigation />
       <StoreList />
     </DefaultLayout>
@@ -29,4 +27,4 @@ export async function getStaticProps({ locale }: any) {
   };
 }
 
-export default Home
+export default StoresPage

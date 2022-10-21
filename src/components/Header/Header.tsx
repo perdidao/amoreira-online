@@ -43,6 +43,14 @@ const Header = (props: Props): JSX.Element => {
               Início
             </Styled.NavLink>
           </Link>
+          <Link href="/lojas">
+            <Styled.NavLink
+              title="Lojas"
+              active={router.pathname.includes('/lojas')}
+            >
+              Lojas
+            </Styled.NavLink>
+          </Link>
           <Link href="/contato">
             <Styled.NavLink
               title="Entre em contato conosco"

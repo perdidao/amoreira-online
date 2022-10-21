@@ -10,5 +10,5 @@ export interface Store {
   whatsapp: string
   workdays: string[]
   categories: string[]
-  menu?: Menu;
+  menu?: Menu[];
 }
