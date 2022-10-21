@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 // Helpers
-import { spacing } from '@helpers/platipus'
+import { mediaQuerie, spacing } from '@helpers/platipus'
 
 // Types
 
@@ -11,4 +11,9 @@ export const Container = styled.div`
   grid-template-columns: repeat(6, 1fr);
   grid-gap: ${spacing('lg')};
   margin: ${spacing('lg')} 0;
+
+  ${mediaQuerie('mobile', `
+    grid-template-columns: repeat(2, 48%);
+    grid-gap: 4%;
+  `)};
 `

@@ -12,6 +12,11 @@ export const Container = styled.div`
   justify-content: space-around;
   margin-bottom: ${spacing('xl')};
 
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
   ${mediaQuerie('mobile', `
     flex-direction: column;
   `)};

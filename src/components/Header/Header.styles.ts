@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 // Helpers
-import { color, fontBody, fontSize, media, spacing } from '@helpers/platipus'
+import { color, fontBody, fontSize, media, mediaQuerie, spacing } from '@helpers/platipus'
 
 // Types
 interface NavLinkProps {
@@ -36,6 +36,11 @@ export const Nav = styled.nav`
   display: flex;
   align-items: stretch;
   justify-content: flex-end;
+
+  ${mediaQuerie('mobile', `
+    flex-direction: column;
+    align-items: center;
+  `)};
 `
 
 export const NavLink = styled.a<NavLinkProps>`
@@ -50,4 +55,8 @@ export const NavLink = styled.a<NavLinkProps>`
   &:hover {
     color: ${color('primary')};
   }
+
+  ${mediaQuerie('mobile', `
+    margin: ${spacing('xs')} 0;
+  `)};
 `

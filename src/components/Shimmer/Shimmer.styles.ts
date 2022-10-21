@@ -5,7 +5,7 @@ import styled, {
 } from 'styled-components'
 
 // HELPERS
-import { spacing, toRem } from '@helpers/platipus';
+import { mediaQuerie, spacing, toRem } from '@helpers/platipus';
 
 // TYPES
 import { ShimmerTypes } from './Shimmer.types';
@@ -78,5 +78,9 @@ export const Shimmer = styled.div<ShimmerProps>`
       & > .Shimmer + .Shimmer {
         margin-top: ${spacing('xs')};
       }
-    `};
+  `};
+
+  ${mediaQuerie('mobile', `
+    width: 100%;
+  `)};
 `

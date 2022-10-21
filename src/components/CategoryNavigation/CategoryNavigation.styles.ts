@@ -7,11 +7,9 @@ import { centered, mediaQuerie, spacing } from '@helpers/platipus'
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 12%);
-  justify-content: space-between;
   grid-gap: ${spacing('md')};
 
   ${mediaQuerie('mobile', `
     grid-template-columns: repeat(3, 30%);
-    grid-gap: 5%;
   `)};
 `
