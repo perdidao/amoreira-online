@@ -20,19 +20,13 @@ export function toRem(value: string | number): string {
  * @param size size name (ex.: nano, tiny, xxxs, etc...)
  * @returns the rem value associated to the size name (ex.: 1rem)
  * @example spacing('sm')
- * nano: 4
- * tiny: 8
- * xxxs: 12
- * xxs: 16
- * xs: 20
- * sm: 24
- * md: 32
+ * xs: 5
+ * sm: 10
+ * md: 20
  * lg: 40
- * xl: 48
- * xxl: 64
- * xxxl: 80
- * huge: 120
- * giga: 160
+ * xl: 80
+ * xxl: 100
+ * xxxl: 160
  */
 export function spacing(size: Size): string {
   return sizes[size]
@@ -332,7 +326,7 @@ export function fontBody(size?: FontPresetSize): string {
 export function centered(spaced?: boolean): string {
   return `
     width: 90vw;
-    max-width: calc(${media('notebook')} - 40px);
+    max-width: calc(${media('notebook')} - ${toRem(40)});
     margin: ${spaced ? spacing('lg') : '0'} auto;
   `
 }

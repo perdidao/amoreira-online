@@ -26,7 +26,7 @@ const Header = (props: Props): JSX.Element => {
   return (
     <Styled.Container>
       <Styled.Wrapper>
-        <h1 onClick={(): void => _handleRedirect()}>
+        <Styled.Logo onClick={(): void => _handleRedirect()}>
           <Image
             src="/assets/images/logo.svg"
             alt="Amoreira Foods"
@@ -34,7 +34,7 @@ const Header = (props: Props): JSX.Element => {
             width={120}
             height={120}
           />
-        </h1>
+        </Styled.Logo>
         <Styled.Nav>
           <Link href="/">
             <Styled.NavLink

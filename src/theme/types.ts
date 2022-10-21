@@ -1,8 +1,4 @@
 export type Size =
-  | 'nano'
-  | 'tiny'
-  | 'xxxs'
-  | 'xxs'
   | 'xs'
   | 'sm'
   | 'md'
@@ -10,8 +6,6 @@ export type Size =
   | 'xl'
   | 'xxl'
   | 'xxxl'
-  | 'huge'
-  | 'giga'
 
 export type FontSize =
   | 'xxxs'

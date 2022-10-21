@@ -23,6 +23,15 @@ export const Wrapper = styled.section`
   justify-content: space-between;
 `
 
+export const Logo = styled.h1`
+  transition: opacity 300ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`
+
 export const Nav = styled.nav`
   display: flex;
   align-items: stretch;
@@ -36,4 +45,9 @@ export const NavLink = styled.a<NavLinkProps>`
   font-weight: ${({ active, theme }): string => active ? theme.fonts.weight.semibold : theme.fonts.weight.normal};
   color: ${({ active }): string => active ? color('primary') : 'inherit'};
   cursor: pointer;
+  transition: color 300ms ease-in-out;
+
+  &:hover {
+    color: ${color('primary')};
+  }
 `
