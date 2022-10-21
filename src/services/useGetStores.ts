@@ -12,7 +12,7 @@ import { Store } from '@models/store'
 const getStores = async (): Promise<Store[]> => {
   const {
     data
-  } = await axios.get(`https://run.mocky.io/v3/8a3721ac-c265-4a81-9267-53c4e09ea469`)
+  } = await axios.get(`https://run.mocky.io/v3/5b06bf91-4ffe-46d2-b03d-6c0415986f8d`)
 
   return data
 }

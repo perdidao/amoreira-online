@@ -9,6 +9,9 @@ const nextConfig = {
     locales: ['pt-br'],
     localeDetection: false,
   },
+  images: {
+    domains: ['i.imgur.com'],
+  },
   swcMinify: true,
 }
 

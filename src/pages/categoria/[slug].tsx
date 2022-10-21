@@ -1,6 +1,7 @@
 import { CategoryNavigation } from '@components'
 import { CategoryHeader } from '@components/CategoryHeader'
 import { Loader } from '@components/Loader'
+import { StoreList } from '@components/StoreList'
 import { DefaultLayout } from '@layouts/Default'
 import { useGetCategory } from '@services/useGetCategory'
 import type { GetStaticPaths, NextPage } from 'next'
@@ -39,6 +40,7 @@ const CategoryPage: NextPage = () => {
     <DefaultLayout title={categoryData.title}>
       <CategoryHeader {...categoryData} />
       <CategoryNavigation currentCategorySlug={currentCategorySlug} />
+      <StoreList categorySlug={currentCategorySlug} />
     </DefaultLayout>
   )
 }

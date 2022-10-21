@@ -1,5 +1,6 @@
 import { CategoryNavigation } from '@components'
 import { HeroSection } from '@components/HeroSection'
+import { StoreList } from '@components/StoreList'
 import { DefaultLayout } from '@layouts/Default'
 import type { NextPage } from 'next'
 
@@ -8,6 +9,7 @@ const Home: NextPage = () => {
     <DefaultLayout title="Início">
       <HeroSection />
       <CategoryNavigation />
+      <StoreList />
     </DefaultLayout>
   )
 }
