@@ -1,6 +1,13 @@
 
+// i18n
+import { useTranslations } from 'next-intl'
+
 // Services
 import { useGetCategory } from '@services/useGetCategory'
+
+// Data
+import { parseSlug } from '@lib/http'
+import { getCategoryBySlug } from '@lib/stores'
 
 // Hooks
 import { useRouter } from 'next/router'
@@ -21,6 +28,7 @@ import type { GetStaticPaths, NextPage } from 'next'
 
 const CategoryPage: NextPage = () => {
   const router = useRouter()
+  const t = useTranslations('errors')
   
   const {
     query: { slug },
@@ -43,9 +51,12 @@ const CategoryPage: NextPage = () => {
     )
   }
 
-  if (!categoryData) {
-    router.push(`/categoria/${slug}`)
-    return <></>
+  if (categoryIsError || !categoryData) {
+    return (
+      <DefaultLayout title={currentCategorySlug} centered={true} spaced={true}>
+        {t('loadFailed')}
+      </DefaultLayout>
+    )
   }
 
   return (
@@ -57,7 +68,13 @@ const CategoryPage: NextPage = () => {
   )
 }
 
-export async function getStaticProps({ locale }: any) {
+export async function getStaticProps({ locale, params }: any) {
+  const slug = parseSlug(params?.slug)
+
+  if (!slug || !getCategoryBySlug(slug)) {
+    return { notFound: true }
+  }
+
   return {
     props: {
       messages: (await import(`@public/locales/${locale.toString()}.json`)).default

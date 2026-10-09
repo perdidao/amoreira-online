@@ -20,7 +20,7 @@ const StoreList = (props: Props): JSX.Element => {
   const {
     data,
     isFetching
-  } = useGetStores()
+  } = useGetStores(categorySlug)
 
   if (isFetching) {
     const shimmers: JSX.Element[] = []

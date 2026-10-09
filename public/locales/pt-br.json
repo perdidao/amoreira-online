@@ -2,5 +2,8 @@
   "global": {
     "title": "Amoreira Online",
     "heading": "Encontre tudo o que tem pra comer aqui"
+  },
+  "errors": {
+    "loadFailed": "Não foi possível carregar as informações. Tente novamente em instantes."
   }
 }

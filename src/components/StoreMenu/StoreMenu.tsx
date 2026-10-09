@@ -26,8 +26,7 @@ const StoreMenu = (props: {
   } = props
 
   const productHasDiscount = (item: MenuItem): boolean => {
-
-    return (item.discountPrice && item.discountPrice !== 0) || false
+    return item.discountPrice !== null
   }
 
   return (

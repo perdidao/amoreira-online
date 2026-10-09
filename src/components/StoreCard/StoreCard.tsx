@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Helpers
-import { isStoreOpenToday, storeStatusText } from '@helpers/storeHelpers'
+import { storeStatusText } from '@helpers/storeHelpers'
 
 // Components
 import Image from 'next/future/image'
@@ -18,29 +18,24 @@ const StoreCard = (props: Props): JSX.Element => {
     title,
     slug,
     logo,
-    workdays,
+    isOpenToday,
     categories
   } = props
 
   const renderCategoryIcons = (): JSX.Element[] => {
-    const categoryIcons: JSX.Element[] = []
-
-    categories.map((category) => {
-      categoryIcons.push(
-        <Link
-          href={`/categoria/${category}`}
-          title={category}>
-          <Image
-            src={`/assets/icons/categories/${category}.png`}
-            alt={category}
-            width={24}
-            height={24}
-          />
-        </Link>
-      )
-    })
-
-    return categoryIcons
+    return categories.map((category) => (
+      <Link
+        href={`/categoria/${category}`}
+        title={category}
+        key={category}>
+        <Image
+          src={`/assets/icons/categories/${category}.png`}
+          alt={category}
+          width={24}
+          height={24}
+        />
+      </Link>
+    ))
   }
 
   return (
@@ -69,8 +64,8 @@ const StoreCard = (props: Props): JSX.Element => {
           {renderCategoryIcons()}
         </Styled.Categories>
       </Styled.Info>
-      <Styled.Status isActive={isStoreOpenToday(workdays)}>
-        {storeStatusText(workdays)}
+      <Styled.Status isActive={isOpenToday}>
+        {storeStatusText(isOpenToday)}
       </Styled.Status>
     </Styled.Container>
   )

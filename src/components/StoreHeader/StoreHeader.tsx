@@ -22,7 +22,7 @@ const StoreHeader = (props: Props): JSX.Element => {
     logo,
     phone,
     whatsapp,
-    workdays
+    isOpenToday
   } = props
 
   return (
@@ -39,7 +39,7 @@ const StoreHeader = (props: Props): JSX.Element => {
         <Styled.Title>
           {title}
         </Styled.Title>
-        <Styled.Status>Este restaurante está {storeStatusText(workdays)} hoje</Styled.Status>
+        <Styled.Status>Este restaurante está {storeStatusText(isOpenToday)} hoje</Styled.Status>
         <Styled.Phone>{phone === whatsapp ? '': phone}</Styled.Phone>
         <Styled.Phone>{whatsapp}</Styled.Phone>
       </Styled.Info>

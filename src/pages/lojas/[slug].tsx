@@ -1,6 +1,13 @@
 
+// i18n
+import { useTranslations } from 'next-intl'
+
 // Services
 import { useGetStore } from '@services/useGetStore'
+
+// Data
+import { parseSlug } from '@lib/http'
+import { getStoreBySlug } from '@lib/stores'
 
 // Hooks
 import { useRouter } from 'next/router'
@@ -18,8 +25,9 @@ import {
 import type { GetStaticPaths, NextPage } from 'next'
 import { StoreMenu } from '@components/StoreMenu'
 
-const CategoryPage: NextPage = () => {
+const StorePage: NextPage = () => {
   const router = useRouter()
+  const t = useTranslations('errors')
   
   const {
     query: { slug },
@@ -42,20 +50,29 @@ const CategoryPage: NextPage = () => {
     )
   }
 
-  if (!data || !data.menu) {
-    router.push(`/`)
-    return <></>
+  if (isError || !data) {
+    return (
+      <DefaultLayout title={currentStoreSlug} centered={true} spaced={true}>
+        {t('loadFailed')}
+      </DefaultLayout>
+    )
   }
 
   return (
     <DefaultLayout title={data.title}>
       <StoreHeader {...data} />
-      <StoreMenu menus={data.menu} />
+      <StoreMenu menus={data.menu ?? []} />
     </DefaultLayout>
   )
 }
 
-export async function getStaticProps({ locale }: any) {
+export async function getStaticProps({ locale, params }: any) {
+  const slug = parseSlug(params?.slug)
+
+  if (!slug || !getStoreBySlug(slug)) {
+    return { notFound: true }
+  }
+
   return {
     props: {
       messages: (await import(`@public/locales/${locale.toString()}.json`)).default
@@ -70,4 +87,4 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   }
 }
 
-export default CategoryPage
+export default StorePage

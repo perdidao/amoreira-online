@@ -1,6 +1,9 @@
 // i18n
 import { NextIntlProvider } from 'next-intl'
 
+// React
+import { useState } from 'react'
+
 // Nextjs
 import type { AppProps } from 'next/app'
 
@@ -15,8 +18,8 @@ interface CustomPageProps {
 }
 
 function MyApp({ Component, pageProps }: AppProps<CustomPageProps>) {
-  const queryClient = new QueryClient()
-  
+  const [queryClient] = useState(() => new QueryClient())
+
   return (
     <NextIntlProvider messages={pageProps.messages}>
       <QueryClientProvider client={queryClient}>
