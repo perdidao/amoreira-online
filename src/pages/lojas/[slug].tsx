@@ -32,7 +32,7 @@ const CategoryPage: NextPage = () => {
     data,
     isFetching,
     isError
-  } = useGetStore()
+  } = useGetStore(currentStoreSlug)
 
   if (isFetching) { 
     return (

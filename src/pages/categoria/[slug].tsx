@@ -33,7 +33,7 @@ const CategoryPage: NextPage = () => {
     data: categoryData,
     isFetching: categoryIsFetching,
     isError: categoryIsError
-  } = useGetCategory()
+  } = useGetCategory(currentCategorySlug)
 
   if (categoryIsFetching) { 
     return (

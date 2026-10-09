@@ -9,19 +9,20 @@ import {
 import { Store } from '@models/store'
 
 
-const getStore = async (): Promise<Store> => {
+const getStore = async (slug: string): Promise<Store> => {
   const {
     data
-  } = await axios.get(`https://run.mocky.io/v3/e8cb9c93-d4a5-4718-b7bb-9341f6b359b9`)
+  } = await axios.get(`/api/stores/${encodeURIComponent(slug)}`)
 
   return data
 }
 
-export const useGetStore = (): UseQueryResult<Store> => {
+export const useGetStore = (slug: string): UseQueryResult<Store> => {
   return useQuery<Store>(
-    ['Store'],
-    () => getStore(),
+    ['store', slug],
+    () => getStore(slug),
     {
+      enabled: !!slug,
       keepPreviousData: false,
       refetchOnWindowFocus: false
     }

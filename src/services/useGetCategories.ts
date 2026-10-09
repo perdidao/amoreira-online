@@ -11,14 +11,14 @@ import { Category } from '@models/category'
 const getCategories = async (): Promise<Category[]> => {
   const {
     data
-  } = await axios.get(`https://run.mocky.io/v3/3a62cfc3-7db9-4857-acc0-7823cf3b82f1`)
+  } = await axios.get('/api/categories')
 
   return data
 }
 
 export const useGetCategories = (): UseQueryResult<Category[]> => {
   return useQuery<Category[]>(
-    ['Categories'],
+    ['categories'],
     () => getCategories(),
     {
       keepPreviousData: false,

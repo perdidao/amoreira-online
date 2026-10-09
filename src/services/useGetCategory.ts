@@ -8,19 +8,20 @@ import {
 // TYPES
 import { Category } from '@models/category'
 
-const getCategory = async (): Promise<Category> => {
+const getCategory = async (slug: string): Promise<Category> => {
   const {
     data
-  } = await axios.get(`https://run.mocky.io/v3/9dd605c2-c2bb-4f21-8b33-d46223ebeede`)
+  } = await axios.get(`/api/categories/${encodeURIComponent(slug)}`)
 
   return data
 }
 
-export const useGetCategory = (): UseQueryResult<Category> => {
+export const useGetCategory = (slug: string): UseQueryResult<Category> => {
   return useQuery<Category>(
-    ['Category'],
-    () => getCategory(),
+    ['category', slug],
+    () => getCategory(slug),
     {
+      enabled: !!slug,
       keepPreviousData: false,
       refetchOnWindowFocus: false
     }
