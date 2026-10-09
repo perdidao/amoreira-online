@@ -9,6 +9,7 @@ export interface Store {
   phone: string
   whatsapp: string
   workdays: string[]
+  isOpenToday: boolean
   categories: string[]
   menu?: Menu[];
 }

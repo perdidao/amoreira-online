@@ -1,0 +1,142 @@
+[
+  {
+    "id": "1",
+    "title": "KM Burguer",
+    "logo": "/assets/stores/km-burguer.png",
+    "slug": "km-burguer",
+    "phone": "(00) 3000-0001",
+    "whatsapp": "(00) 90000-0001",
+    "workdays": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "categories": ["hamburguer", "porcoes", "bebidas"],
+    "menu": [
+      {
+        "title": "Bebidas",
+        "priority": 3,
+        "items": [
+          { "name": "Refrigerante lata", "description": "350ml", "price": 6, "discountPrice": null, "thumb": null },
+          { "name": "Suco natural", "description": "Laranja, limão ou maracujá - 500ml", "price": 10, "discountPrice": 0, "thumb": null }
+        ]
+      },
+      {
+        "title": "Lanches",
+        "priority": 1,
+        "items": [
+          { "name": "X-Burguer", "description": "Pão, hambúrguer artesanal 150g, queijo e maionese da casa", "price": 24, "discountPrice": null, "thumb": null },
+          { "name": "X-Bacon", "description": "Pão, hambúrguer artesanal 150g, queijo, bacon e maionese da casa", "price": 29, "discountPrice": 25.9, "thumb": null },
+          { "name": "X-Tudo", "description": null, "price": 36, "discountPrice": null, "thumb": null }
+        ]
+      },
+      {
+        "title": "Porções",
+        "priority": 2,
+        "items": [
+          { "name": "Batata frita", "description": "Porção para duas pessoas", "price": 22, "discountPrice": null, "thumb": null },
+          { "name": "Onion rings", "description": null, "price": 25, "discountPrice": null, "thumb": null }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Pizzaria Forno de Pedra",
+    "logo": "/assets/stores/placeholder.svg",
+    "slug": "pizzaria-forno-de-pedra",
+    "phone": "(00) 90000-0002",
+    "whatsapp": "(00) 90000-0002",
+    "workdays": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "categories": ["pizza", "bebidas"],
+    "menu": [
+      {
+        "title": "Pizzas",
+        "priority": 1,
+        "items": [
+          { "name": "Mussarela", "description": "Molho de tomate, mussarela e orégano", "price": 45, "discountPrice": null, "thumb": null },
+          { "name": "Calabresa", "description": "Molho de tomate, calabresa, cebola e orégano", "price": 48, "discountPrice": 42, "thumb": null },
+          { "name": "Portuguesa", "description": "Presunto, ovo, cebola, ervilha e mussarela", "price": 52, "discountPrice": null, "thumb": null }
+        ]
+      },
+      {
+        "title": "Bebidas",
+        "priority": 2,
+        "items": [
+          { "name": "Refrigerante 2L", "description": null, "price": 14, "discountPrice": null, "thumb": null }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Cantinho da Vó",
+    "logo": "/assets/stores/placeholder.svg",
+    "slug": "cantinho-da-vo",
+    "phone": "(00) 3000-0003",
+    "whatsapp": "(00) 90000-0003",
+    "workdays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "categories": ["comida-brasileira", "marmitex"],
+    "menu": [
+      {
+        "title": "Marmitex",
+        "priority": 1,
+        "items": [
+          { "name": "Marmitex pequena", "description": "Arroz, feijão, salada e uma mistura", "price": 18, "discountPrice": null, "thumb": null },
+          { "name": "Marmitex grande", "description": "Arroz, feijão, salada e duas misturas", "price": 23, "discountPrice": null, "thumb": null }
+        ]
+      },
+      {
+        "title": "Pratos do dia",
+        "priority": 2,
+        "items": [
+          { "name": "Feijoada", "description": "Somente aos sábados", "price": 35, "discountPrice": null, "thumb": null },
+          { "name": "Frango com quiabo", "description": null, "price": 30, "discountPrice": 27, "thumb": null }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Sorveteria Gelato Bom",
+    "logo": "/assets/stores/placeholder.svg",
+    "slug": "sorveteria-gelato-bom",
+    "phone": "(00) 90000-0004",
+    "whatsapp": "(00) 90000-0004",
+    "workdays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "categories": ["sorvetes", "bebidas"],
+    "menu": [
+      {
+        "title": "Sorvetes",
+        "priority": 1,
+        "items": [
+          { "name": "Casquinha", "description": "Uma bola", "price": 8, "discountPrice": null, "thumb": null },
+          { "name": "Taça especial", "description": "Três bolas, calda e chantilly", "price": 22, "discountPrice": null, "thumb": null }
+        ]
+      },
+      {
+        "title": "Milkshakes",
+        "priority": 2,
+        "items": [
+          { "name": "Milkshake 500ml", "description": "Chocolate, morango ou baunilha", "price": 18, "discountPrice": 15, "thumb": null }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Bar do Zé",
+    "logo": "/assets/stores/placeholder.svg",
+    "slug": "bar-do-ze",
+    "phone": "(00) 3000-0005",
+    "whatsapp": "(00) 90000-0005",
+    "workdays": ["Thursday", "Friday", "Saturday", "Sunday"],
+    "categories": ["porcoes", "bebidas"],
+    "menu": [
+      {
+        "title": "Porções",
+        "priority": 1,
+        "items": [
+          { "name": "Calabresa acebolada", "description": null, "price": 32, "discountPrice": null, "thumb": null },
+          { "name": "Mandioca frita", "description": "Porção para duas pessoas", "price": 26, "discountPrice": null, "thumb": null }
+        ]
+      }
+    ]
+  }
+]

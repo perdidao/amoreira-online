@@ -1,0 +1,9 @@
+[
+  { "id": "1", "title": "Hambúrguer", "slug": "hamburguer" },
+  { "id": "2", "title": "Pizza", "slug": "pizza" },
+  { "id": "3", "title": "Comida brasileira", "slug": "comida-brasileira" },
+  { "id": "4", "title": "Marmitex", "slug": "marmitex" },
+  { "id": "5", "title": "Porções", "slug": "porcoes" },
+  { "id": "6", "title": "Sorvetes", "slug": "sorvetes" },
+  { "id": "7", "title": "Bebidas", "slug": "bebidas" }
+]
